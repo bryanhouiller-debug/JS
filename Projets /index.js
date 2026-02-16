@@ -280,3 +280,64 @@ button.addEventListener("click", function() {
     menu.classList.toggle("hidden");
 
 });
+
+// On récupère le formulaire
+const form = document.getElementById("postForm");
+
+// On récupère le conteneur du feed
+const feed = document.getElementById("feed");
+
+// On écoute la soumission du formulaire
+form.addEventListener("submit", function(event) {
+
+    // Empêche le rechargement de la page
+    event.preventDefault();
+
+    // Récupère les valeurs des champs
+    const title = document.getElementById("title").value;
+    const content = document.getElementById("content").value;
+
+    // Crée un nouvel élément div
+    const post = document.createElement("div");
+
+    // Ajoute du contenu HTML dans la div
+    post.innerHTML = `
+        <h3>${title}</h3>
+        <p>${content}</p>
+        <hr>
+    `;
+
+    // Ajoute le nouveau post dans le feed
+    feed.appendChild(post);
+
+    // Vide le formulaire
+    form.reset();
+});
+// On récupère les boutons
+const gridBtn = document.getElementById("gridBtn");
+const columnBtn = document.getElementById("columnBtn");
+
+// On récupère la galerie
+const gallery = document.getElementById("gallery");
+
+// Quand on clique sur "Mosaïque"
+gridBtn.addEventListener("click", function() {
+
+    // On enlève la classe "column"
+    gallery.classList.remove("column");
+
+    // On ajoute la classe "grid"
+    gallery.classList.add("grid");
+
+});
+
+// Quand on clique sur "Colonne"
+columnBtn.addEventListener("click", function() {
+
+    // On enlève la classe "grid"
+    gallery.classList.remove("grid");
+
+    // On ajoute la classe "column"
+    gallery.classList.add("column");
+
+});

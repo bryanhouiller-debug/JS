@@ -113,3 +113,25 @@
 #menu li:hover {
     background-color: gray;
 }
+#gallery {
+    margin-top: 20px;
+}
+
+#gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Mode mosaïque */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Mode colonne */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
