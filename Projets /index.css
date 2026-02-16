@@ -93,3 +93,23 @@
       .product-detail { flex-direction:column; }
       .modal { left:50%; transform:translateX(-50%); right:auto; top:unset; bottom:20px; width:90%; max-height:60vh; }
     }
+
+    .hidden {
+    display: none;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    background-color: lightgray;
+    width: 150px;
+}
+
+#menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#menu li:hover {
+    background-color: gray;
+}

@@ -267,3 +267,16 @@
       renderCartCount();
       loadProducts();
     })();
+    // On récupère le bouton grâce à son id
+const button = document.getElementById("menuButton");
+
+// On récupère le menu grâce à son id
+const menu = document.getElementById("menu");
+
+// On ajoute un événement "click" sur le bouton
+button.addEventListener("click", function() {
+
+    // On bascule (toggle) la classe "hidden"
+    menu.classList.toggle("hidden");
+
+});
