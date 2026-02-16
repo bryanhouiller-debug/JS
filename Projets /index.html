@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="index.css">
+  <title>Gaming Shop - Démo Produits & Panier</title>
+  <style>
+    /* ====== RESET léger ====== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, system-ui, Arial; background:#FAF3E0; color:#111; line-height:1.4; }
+
+    header { padding:18px 24px; display:flex; justify-content:space-between; align-items:center; }
+    header .brand { font-weight:700; font-size:1.25rem; }
+    header .cart-btn { position:relative; background:#222; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+
+   
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">Gaming Shop — Démo</div>
+    <button class="cart-btn" id="openCartBtn">
+      Panier
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <!-- Liste de produits chargés depuis l'API -->
+    <aside class="product-list" id="productList">
+      <p style="opacity:.6; padding:8px 6px;">Chargement des produits…</p>
+    </aside>
+
+    <!-- Détail produit + carousel -->
+    <section class="product-detail">
+      <div class="carousel" id="carousel">
+        <div class="slides" id="slides"></div>
+
+        <button class="control prev" id="prevBtn" aria-label="Précédent">&larr;</button>
+        <button class="control next" id="nextBtn" aria-label="Suivant">&rarr;</button>
+
+        <div class="indicators" id="indicators"></div>
+      </div>
+
+      <div class="info">
+        <h2 id="pTitle">Sélectionne un produit</h2>
+        <div class="price" id="pPrice">—</div>
+        <div class="desc" id="pDesc">Clique sur un produit dans la colonne de gauche pour charger les images et la description.</div>
+        <button class="add-btn" id="addToCartBtn" disabled>Ajouter au panier</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal panier -->
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <h3>Ton panier</h3>
+    <div id="cartItems"></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+      <strong>Total :</strong>
+      <strong id="cartTotal">0 €</strong>
+    </div>
+    <div style="margin-top:12px; display:flex; gap:8px;">
+      <button id="checkoutBtn" style="flex:1; background:#111; color:#fff; border:none; padding:8px; border-radius:8px;">Valider</button>
+      <button id="clearCartBtn" style="flex:1; background:#eee; border:none; padding:8px; border-radius:8px;">Vider</button>
+    </div>
+  </div>
+
+  <script>
+    
+  </script>
+</body>
+</html>
