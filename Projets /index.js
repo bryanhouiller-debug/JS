@@ -341,3 +341,34 @@ columnBtn.addEventListener("click", function() {
     gallery.classList.add("column");
 
 });
+// On récupère le bouton
+const addButton = document.getElementById("addImageBtn");
+
+// On récupère le champ input
+const imageInput = document.getElementById("imageUrl");
+
+// On écoute le clic sur le bouton
+addButton.addEventListener("click", function() {
+
+    // On récupère la valeur saisie
+    const imageUrl = imageInput.value;
+
+    // Vérifie que le champ n'est pas vide
+    if (imageUrl === "") {
+        alert("Veuillez entrer une URL d'image");
+        return;
+    }
+
+    // Crée un nouvel élément image
+    const newImage = document.createElement("img");
+
+    // Définit la source de l'image
+    newImage.src = imageUrl;
+
+    // Ajoute l'image à la galerie
+    gallery.appendChild(newImage);
+
+    // Vide le champ input
+    imageInput.value = "";
+
+});
